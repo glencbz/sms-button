@@ -1,0 +1,122 @@
+p{
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.button-backing{
+	height: 100%;
+	width: 100%;
+	border-radius: 3px;
+	overflow: hidden;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 0;
+}
+
+.animated-button .fa-paper-plane{
+    font-size: 6px;
+    color: white;
+    position: absolute;
+    z-index: 1;
+    left: 4px;
+    top: 3px;
+    /*transition: transform 0.2s ease-in-out;*/
+    animation-fill-mode: forwards;
+}
+
+.animated-button{
+	height: 12px;
+	width: 40px;
+	border-radius: 3px;
+	background-color: #C3C3C3;
+	overflow: hidden;
+	position: relative;
+}
+
+.animated-button .button-text{
+	position: absolute;
+    font-size: 5px;
+    z-index: 2;
+    color: white;
+    display: none;
+}
+
+.circle-animation{
+	height: 2px;
+	width: 2px;
+	border-radius: 1px;
+	background-color: #3893d9;
+    transform: scale(24);
+    animation-fill-mode: forwards;
+}
+
+.progress-circle{
+	margin: auto;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;	
+	position: absolute;
+	height: 2px;
+	width: 2px;
+	border-radius: 1px;
+}
+.circle-inner{
+	background-color: #C3C3C3;
+	transform: scale(0);
+	z-index: 1;
+}
+.progress-circle-mask{
+	background-color: transparent;
+	z-index: 2;
+	transform: scale(0);
+    background-image: 
+    linear-gradient(90deg, transparent 50%, #C3C3C3 50%), 
+    linear-gradient(200deg, transparent 50%, #C3C3C3 50%);
+}
+.animated-button:hover .circle-animation{
+	transform: scale(4);
+	transition: transform 0.2s;
+	transition-delay: 0.6s;*/
+/*	animation-name: shrink-to-progress;
+	animation-duration: 0.2s;
+	animation-delay: 0.6s;*/
+}
+.animated-button:hover .fa-paper-plane{
+	animation-name: plane-take-off;
+	animation-duration: 1s;
+}
+.animated-button:hover .circle-inner{
+	transform: scale(3);
+	transition: transform 0.4s;
+	transition-delay: 0.6s;
+}
+.animated-button:hover .progress-circle-mask{
+	transform: scale(5);
+	transition: transform 0.5s;
+	transition-delay: 0.6s;
+	animation: progress-circle-rotate;
+	animation-delay: 1.3s;
+	animation-iteration-count: infinite;
+	animation-duration: 2s;
+}
+@keyframes plane-take-off{
+	0% {transform: translate(0, 0);}
+	50% {transform: translate(-2px, 6px);}
+	60% {transform: translate(-2px, 6px);}
+	100% {transform: translate(6px, -11px);}
+}
+@keyframes progress-circle-rotate{
+	0% {transform: scale(5) rotate(0deg);}
+	20% 25% {transform: scale(5) rotate(90deg);} 
+	45% 50% {transform: scale(5) rotate(180deg);}
+	70% 75% {transform: scale(5) rotate(270deg);}
+	100% {transform: scale(5) rotate(360deg);}
+}
+
+/*@keyframes shrink-to-progress{
+	0% {transform: scale(24);}
+	100% {transform: scale(4);}
+}*/
+
